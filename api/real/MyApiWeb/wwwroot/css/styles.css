@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  background: rgb(0,181,217);
+  background: -moz-linear-gradient(180deg, rgba(0,181,217,1) 50%, rgba(29,138,1,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(0,181,217,1) 50%, rgba(29,138,1,1) 100%);
+  background: linear-gradient(180deg, rgba(0,181,217,1) 50%, rgba(29,138,1,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00b5d9",endColorstr="#1d8a01",GradientType=1);
+  color: black;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  padding: 15px;
+  margin: auto;
+  text-align: center;
+}
+
+.logo {
+  background: url('/images/logo.png') no-repeat center center;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+a {
+  margin: 0 5px;
+  color: inherit;
+}
+
+a:hover { font-weight: bold; }
+
+ul, ol {
+  list-style-position: inside;
+  margin: auto;
+  text-align: center;
+}
+
+ul li, ol li {
+  line-height: 2rem;
+  text-align: justify;
+}
+
+.title {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+.section {
+  display: block;
+  position: relative;
+}
+
+.section_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 50vh;
+  max-height: 100%;
+  max-width: 100%;
+}

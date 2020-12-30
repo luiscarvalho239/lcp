@@ -1,0 +1,14 @@
+<div class="fixedradio">
+    <div class="fixedradio_container">
+        <button mat-fab color="accent" aria-label="Listen web radio" (click)="loadRadio()">
+          <mat-icon>radio</mat-icon>
+        </button>
+        <mat-progress-spinner color="accent" class="fixedradio_pbar" mode="indeterminate" *ngIf="isEnabled == true && isLoading == true"></mat-progress-spinner>
+        <div class="fixedradioinfo" *ngIf="isLoading == false" style="margin-left: 15px" [ngClass]="isEnabled == false ? 'hidden' : ''">
+            <img src="https://localhost:5001/resources/images/radios/m80.jpg" class="img imgradio" width="auto" height="50px" />
+            <audio controls>
+                <source src="https://mcrscast.mcr.iol.pt/m80" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</div>

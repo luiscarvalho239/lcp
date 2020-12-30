@@ -1,0 +1,172 @@
+::ng-deep .container {
+    padding: 0;
+}
+
+.header_image {
+    img, .img, #img {
+        position: relative;
+        background: url('/assets/images/cover.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+        background-size: cover;
+        width: auto;
+        height: auto;
+        min-height: 50vh !important;
+
+      &::after {
+        content: "Register";
+        font-size: 3rem;
+        color: yellow;
+        position: absolute;
+        left: 50%;
+        right: auto;
+        top: 50%;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+      }
+    }
+}
+
+.text {
+    padding: 15px;
+}
+
+.regformContainer {
+    margin: 15px auto;
+}
+
+label { display: block; }
+input { display: block; width: 100%; text-align: center; }
+
+.mat-form-field {
+    display: block;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.blkreg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    background: url('/assets/images/cover.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    background-size: cover;
+
+    .blkregcontainer {
+        display: block;
+        position: relative;
+        width: 50vw;
+        height: auto;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+        background: white !important;
+    }
+
+    .logo_title {
+        padding: 0 !important;
+        margin: 2rem auto !important;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+    }
+}
+
+.regavatar { 
+    width: 150px !important;
+    height: 150px !important;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: top center;
+}
+
+.rnamesblk, .rimageblk {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: 0 auto;
+}
+
+.reg_col_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px 0 0;
+
+    .mat-form-field { width: 100% !important; }
+}
+
+.reg_col_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 0 0 0 15px;
+
+    .mat-form-field { width: 100% !important; }
+}
+
+.mt-3 { margin-top: 15px; }
+.ml-3 { margin-left: 15px; }
+
+@media all and (max-width: 992px) {
+    .blkreg {
+        min-width: auto !important;
+        .blkregcontainer { width: auto !important; }
+    }
+}
+
+@media all and (max-width: 968px) {
+    .header_image {
+        img, .img, #img {
+            min-height: 50vh !important;
+        }
+    }
+
+    .rimageblk {
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        .reg_col_left, .reg_col_right {
+            padding: 0 !important;
+        }
+    }
+
+    .reg_col_left, .reg_col_right {
+        justify-content: center !important;
+        align-items: center !important;
+        float: none !important;
+        width: 100% !important;
+    }
+
+    .mat-form-field {
+        width: auto !important;
+        max-width: 100% !important;
+    }
+}

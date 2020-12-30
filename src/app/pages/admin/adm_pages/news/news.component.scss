@@ -1,0 +1,71 @@
+::ng-deep .container {
+    padding: 0;
+}
+
+.header_news_gen_image {
+    img, .img, #img {
+        position: relative;
+        background: url('/assets/images/cover.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+        background-size: cover;
+        width: auto;
+        height: auto;
+        min-height: 50vh !important;
+
+      &::after {
+        content: "Gerir Noticias";
+        font-size: 3rem;
+        color: yellow;
+        position: absolute;
+        left: 50%;
+        right: auto;
+        top: 50%;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+      }
+    }
+}
+
+input { width: 100% !important; }
+
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.mcontainer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px;
+}
+
+.img-responsive {
+    display: block;
+    width: auto;
+    height: auto;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.imgnewsgencover {
+    width: 100%;
+    height: 100%;
+}
+
+.mt-3 { margin-top: 15px; }
+.ml-3 { margin-left: 15px; }
+
+@media all and (max-width: 968px) {
+    .header_news_gen_image {
+        img, .img, #img {
+            min-height: 50vh !important;
+        }
+    }
+}

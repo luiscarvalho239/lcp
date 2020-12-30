@@ -1,0 +1,156 @@
+::ng-deep .container {
+    padding: 0;
+}
+
+.header_image {
+    img, .img, #img {
+        position: relative;
+        background: url('/assets/images/cover.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+        background-size: cover;
+        width: auto;
+        height: auto;
+        min-height: 50vh !important;
+
+      &::after {
+        content: "Detailed News Page";
+        font-size: 3rem;
+        color: yellow;
+        position: absolute;
+        left: 50%;
+        right: auto;
+        top: 50%;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+      }
+    }
+}
+
+.text {
+    padding: 15px;
+}
+
+input { width: 100% !important; }
+
+.mt-3 { margin-top: 15px; }
+.ml-3 { margin-left: 15px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.mynewsdetcard {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.newsdet-card {
+    margin: 0;
+    white-space: normal;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.clearfix {
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
+
+.newsdet-header-image {
+    background-size: cover;
+}
+
+.mat-card-header {
+    margin: -16px -16px 0px -16px !important;
+    padding: 16px;
+    background: #4859b7;
+    color: white;
+    border-radius: inherit;
+
+    .mat-card-title, ::ng-deep .mat-card-header-text {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .mat-card-subtitle {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    & * {
+        color: inherit;
+    }
+}
+
+.long_text {
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    &:hover {
+        width: 100%;
+        white-space: normal !important;
+        overflow: auto !important;
+    }
+}
+
+.long_desc {
+    text-overflow: ellipsis;
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto !important;
+    &:hover {
+        width: 100%;
+        white-space: normal !important;
+        overflow: auto !important;
+    }
+}
+
+.btn_source {
+    margin: 0px auto;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.mcontainer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px;
+}
+
+.hidden { display: none !important; }
+
+.m-0 { margin: 0 !important; }
+.mx-auto { margin: 0 auto !important; }
+
+.t-left { text-align: left !important; }
+.t-center { text-align: center !important; }
+.t-right { text-align: right !important; }
+.t-justify, ::ng-deep .t-justify {
+    text-align: justify !important;
+    line-height: 2rem;
+}
+
+@media all and (max-width: 968px) {
+    .header_image {
+        img, .img, #img {
+            min-height: 50vh !important;
+        }
+    }
+
+    .mcontainer { max-width: 100% !important; }
+}
+
+@media all and (max-width: 768px) {
+    
+}

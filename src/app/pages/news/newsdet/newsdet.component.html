@@ -1,0 +1,32 @@
+<!-- <div class="header_image">
+    <div class="img"></div>
+</div> -->
+<div class="text">
+    <div class="mcontainer">
+        <div *ngIf="newsdet$ | async as newsdet">
+            <div class="newsdetcardcontent" fxLayout="row wrap" fxLayoutGap="16px grid">
+                <div class="newsdetcardcontainer" *ngFor="let n of newsdet; index as i" fxFlex="100%">
+                    <div class="mynewsdetcard">
+                        <mat-card class="newsdet-card">
+                            <mat-card-header>
+                                <mat-card-title class="t-center m-0">{{n.title}}</mat-card-title>
+                            </mat-card-header>
+                            <img mat-card-image [src]="n.cover" [alt]="n.title">
+                            <mat-card-content>
+                                <p>Categoria: {{n.category}} | Data: {{n.date}}</p>
+                                <div [innerHtml]="n.text | safeHtml"></div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+            <div *ngIf="newsdet.length == 0">
+                <h1>News (id: {{id}}) not found!!!</h1>
+            </div>
+        </div>
+        
+        <button mat-raised-button color="primary" routerLink="/main">Voltar</button>
+    </div>
+</div>

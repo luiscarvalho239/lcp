@@ -1,0 +1,18 @@
+<div class="splash_container">
+    <div class="splash_image">
+        <div class="img img_1" id="img"></div>
+    </div>
+    <div class="splash_text">
+        <h1 class="t-center logo_title">LCP</h1>
+        <h2 class="t-center">Welcome!!!</h2>
+        <div class="example-button-row mt-3">
+            <div *ngIf="uName">
+                <button mat-raised-button color="primary" routerLink="/main">Enter</button>                
+            </div>
+            <div *ngIf="!uName">
+                <button mat-raised-button color="primary" routerLink="/login">Login</button>                
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>

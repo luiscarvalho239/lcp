@@ -1,0 +1,35 @@
+<div class="mcontainer">
+    <div class="userscardcontent" fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div class="userscardcontainer" *ngFor="let dt of dataUsers; index as i" fxFlex="100%">
+            <div class="myuserscard">
+                <mat-card class="users-card">
+                    <mat-card-header>
+                        <mat-card-title class="t-center m-0" routerLink="/users/{{dt.id}}">
+                            {{dt.username}}
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="user_content">
+                            <div class="content_left">
+                                <a href="{{dt.image}}" target="_blank"> 
+                                    <img mat-card-image src="{{dt.image}}" [alt]="dt.firstName"
+                                    [title]="dt.firstName" class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="content_right">
+                                <p>Id: {{dt.id}}</p>
+                                <p>Nome completo: {{dt.firstName}} {{dt.lastName}}</p>
+                                <p>Email: <a href="mailto:{{dt.email}}">{{dt.email}}</a></p>
+                                <p>Tipo: {{dt.role}}</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div *ngIf="dt.id == id">
+                            <button mat-raised-button color="primary" routerLink="/users">Voltar</button>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div *ngIf="urlPage == '/admin'">
+    <div class="containergraph">
+        <div class="chart-wrapper">
+            <canvas id="chart" baseChart 
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+          </canvas>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="urlPage == '/admin/users'">
+    <app-ausers></app-ausers>
+</div>
+
+<div *ngIf="urlPage == '/admin/news'">
+    <app-anews></app-anews>
+</div>
+
+<div *ngIf="urlPage == '/admin/videos'">
+    <app-avideos></app-avideos>
+</div>

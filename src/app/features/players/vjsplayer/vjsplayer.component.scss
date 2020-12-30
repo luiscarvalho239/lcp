@@ -1,0 +1,8 @@
+// @import '~video.js/dist/video-js.css';
+.example-button-row {
+    display: inline-block;
+    margin: 15px auto;
+    & > * {
+        margin: auto 5px;
+    }
+}

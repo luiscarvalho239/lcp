@@ -1,0 +1,10 @@
+<div class="mheader" *ngIf="isHeaderAllowed === true">
+    <app-header></app-header>
+</div>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+<div class="mfooter" *ngIf="isFooterAllowed === true">
+    <app-footer></app-footer>
+</div>
+<app-radio-widget></app-radio-widget>

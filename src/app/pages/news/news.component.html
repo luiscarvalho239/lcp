@@ -1,0 +1,19 @@
+    <div class="mcontainer">
+        <div *ngIf="news$ | async as news">
+            <div class="newscardcontent" fxLayout="row wrap" fxLayoutGap="16px grid">
+                <div class="newscardcontainer" *ngFor="let n of news | paginate: { itemsPerPage: 6, currentPage: p, totalItems: news.length }; index as i" fxFlex="33.33%" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33.33%">
+                    <div class="mynewscard">
+                        <mat-card (click)="gotoItems(n.source)" class="news-card">
+                            <img mat-card-image [src]="n.cover" [alt]="n.title">
+                            <mat-card-header>
+                                <mat-card-title class="t-center m-0">{{n.title}}</mat-card-title>
+                            </mat-card-header>
+                        </mat-card>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>

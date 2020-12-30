@@ -1,0 +1,145 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+::ng-deep body { position: relative; }
+
+.mytoolbar {
+    position: relative;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+} 
+
+::ng-deep .container {
+    position: relative;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+::ng-deep .mfooter {
+    position: relative;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+::ng-deep .mat-drawer-inner-container {
+    background: #3f51b5 !important;
+    color: white !important;
+}
+
+.mysidenav-container, .mysidenavadm-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden !important;
+    z-index: 99999;
+}
+
+.r-btn { 
+    float: right;
+    display: block;
+    padding: 5px 15px;
+    margin: 0;
+    min-width: auto;
+}
+.clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+.mylistlog {
+    list-style-type: none;
+    list-style-position: inside;
+    .uname, .login, .logout {
+        margin-right: 15px;
+    }
+    a {
+        cursor: pointer !important;
+    }
+}
+.mylistlinks {
+    display: block;
+    margin: 15px auto;
+    padding: 0;
+    list-style-type: none;
+    list-style-position: inside;
+    width: 100%;
+    max-width: 100%;
+    .mat-icon {
+        padding-right: 5px;
+        :hover {
+            text-decoration: none !important;
+        }
+    }
+    li {
+        margin: 0 15px;
+        padding: 0;
+        .active {
+            background: yellow;
+            color: black;
+        }
+        a {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            text-decoration: none;
+            padding: 8px 15px;
+        }
+    }
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .userlink {
+        display: inherit;
+        flex-direction: inherit;
+        justify-content: inherit;
+        align-items: inherit;
+    }
+}
+
+.avatar {
+    display: inline-block;
+    width: 40px !important;
+    height: 40px !important;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 15px;
+    object-fit: cover;
+    object-position: top center;
+
+    &.avatar-bordered {
+        border: 0;
+        border: 1px solid white;
+        border-radius: 50%;
+        box-sizing: border-box;
+    }
+}
+
+.img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+
+    &.img-bordered {
+        border: 0;
+        border-radius: 0.25rem;
+    }
+}

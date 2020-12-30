@@ -1,0 +1,4 @@
+<video #target class="video-js" controls muted playsinline preload="auto"></video>
+<div class="example-button-row" *ngFor="let avids of ary_videos; let i = index">
+    <button mat-raised-button color="primary" (click)="setVideo(i)">Play video {{i+1}}</button>
+</div>

@@ -1,0 +1,98 @@
+// tslint:disable
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Pipe, PipeTransform, Injectable, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, Directive, Input, Output } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
+import { Observable, of as observableOf, throwError } from 'rxjs';
+
+import { Component } from '@angular/core';
+import { UsersComponent } from './users.component';
+import { ActivatedRoute } from '@angular/router';
+import { UsersService } from '@app/services/users.service';
+import { HttpClientModule } from '@angular/common/http';
+
+@Directive({ selector: '[oneviewPermitted]' })
+class OneviewPermittedDirective {
+  @Input() oneviewPermitted;
+}
+
+@Pipe({name: 'translate'})
+class TranslatePipe implements PipeTransform {
+  transform(value) { return value; }
+}
+
+@Pipe({name: 'phoneNumber'})
+class PhoneNumberPipe implements PipeTransform {
+  transform(value) { return value; }
+}
+
+@Pipe({name: 'safeHtml'})
+class SafeHtmlPipe implements PipeTransform {
+  transform(value) { return value; }
+}
+
+describe('UsersComponent', () => {
+  let fixture;
+  let component;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [ FormsModule, ReactiveFormsModule, HttpClientModule ],
+      declarations: [
+        UsersComponent,
+        TranslatePipe, PhoneNumberPipe, SafeHtmlPipe,
+        OneviewPermittedDirective
+      ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {url: 'url', params: {}, queryParams: {}, data: {}},
+            url: observableOf('url'),
+            params: observableOf({}),
+            queryParams: observableOf({}),
+            fragment: observableOf('fragment'),
+            data: observableOf({})
+          }
+        },
+        UsersService
+      ]
+    }).overrideComponent(UsersComponent, {
+
+    }).compileComponents();
+    fixture = TestBed.createComponent(UsersComponent);
+    component = fixture.debugElement.componentInstance;
+  });
+
+  afterEach(() => {
+    component.ngOnDestroy = function() {};
+    fixture.destroy();
+  });
+
+  it('should run #constructor()', async () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should run #ngOnInit()', async () => {
+    spyOn(component, 'loadDataUsers');
+    component.ngOnInit();
+    // expect(component.loadDataUsers).toHaveBeenCalled();
+  });
+
+  it('should run #loadDataUsers()', async () => {
+    component.usersSrv = component.usersSrv || {};
+    spyOn(component.usersSrv, 'getUsers').and.returnValue(observableOf({}));
+    component.loadDataUsers();
+    // expect(component.usersSrv.getUsers).toHaveBeenCalled();
+  });
+
+  it('should run #ngOnDestroy()', async () => {
+    component.sub = component.sub || {};
+    spyOn(component.sub, 'unsubscribe');
+    component.ngOnDestroy();
+    // expect(component.sub.unsubscribe).toHaveBeenCalled();
+  });
+
+});

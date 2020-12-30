@@ -1,0 +1,106 @@
+<mat-toolbar class="mytoolbar">
+    <div *ngIf="isAdminPage == true">
+        <button mat-button (click)="sidenavadm.toggle()" *ngIf="uName && uName.role == 'admin'">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <a routerLink="/" class="logo_brand_title"><span>{{title}}</span></a>
+    <span class="example-spacer"></span>
+    <ul class="mylistlog">
+        <li *ngIf="uName">
+            <div class="user">
+                <a class="userlink" routerLink="/users/{{uName.id}}" routerLinkActive="active">
+                    <img src="{{uName.image}}" [alt]="uName.firstName" [title]="uName.firstName"
+                        class="avatar avatar-bordered" />
+                    <span class="uname">{{uName.firstName}}</span>
+                </a>
+                <a class="logout" (click)="logout()">Logout</a>
+            </div>
+        </li>
+        <li *ngIf="!uName">
+            <a class="login" routerLink="/login" routerLinkActive="active">
+                <span>Login</span>
+            </a>
+        </li>
+    </ul>
+    <div *ngIf="isAdminPage == false">
+        <button mat-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
+
+<mat-sidenav-container class="mysidenav-container">
+    <mat-sidenav #sidenavadm mode="over" position="start" [(opened)]="opened_adm" (opened)="events_adm.push('open!')" (closed)="events_adm.push('close!')">
+        <button mat-button (click)="sidenavadm.toggle()" class="r-btn">
+            <mat-icon>close</mat-icon>
+        </button>
+        <div class="clearfix"></div>
+
+        <ul class="mylistlinks">
+            <li>
+                <a routerLink="/admin" routerLinkActive="active">
+                    <mat-icon>home</mat-icon>
+                    <span>Admin home</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/admin/users" routerLinkActive="active">
+                    <mat-icon>supervisor_account</mat-icon>
+                    <span>Gerir Utilizadores</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/admin/news" routerLinkActive="active">
+                    <mat-icon>article</mat-icon>
+                    <span>Gerir Noticias</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/admin/videos" routerLinkActive="active">
+                    <mat-icon>video_library</mat-icon>
+                    <span>Gerir Videos</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/main" routerLinkActive="active">
+                    <mat-icon>home</mat-icon>
+                    <span>Voltar à página principal</span>
+                </a>
+            </li>
+        </ul>
+    </mat-sidenav>
+    <mat-sidenav #sidenav mode="over" position="end" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
+        <button mat-button (click)="sidenav.toggle()" class="r-btn">
+            <mat-icon>close</mat-icon>
+        </button>
+        <div class="clearfix"></div>
+
+        <ul class="mylistlinks">
+            <li>
+                <a routerLink="/main" routerLinkActive="active">
+                    <mat-icon>home</mat-icon>
+                    <span>Main</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/lists" routerLinkActive="active">
+                    <mat-icon>list</mat-icon>
+                    <span>Listas</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/videos" routerLinkActive="active">
+                    <mat-icon>video_library</mat-icon>
+                    <span>Videos</span>
+                </a>
+            </li>
+            <li *ngIf="uName && uName.role == 'admin'">
+                <a routerLink="/admin" routerLinkActive="active">
+                    <mat-icon>supervisor_account</mat-icon>
+                    <span>Admin</span>
+                </a>
+            </li>
+        </ul>
+    </mat-sidenav>
+</mat-sidenav-container>

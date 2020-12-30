@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+@font-face {
+    font-family: fontAudioWide;
+    src: url(/assets/fonts/audiowide/Audiowide-Regular.ttf);
+}
+
+@mixin text3d {
+    font-family: fontAudioWide;
+    color: #444444;
+    text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 
+    2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 
+    3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 
+    4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 
+    5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 
+    6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 
+    7px 6px 1px #CCCCCC;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.text-center, .t-center { text-align: center !important; margin: auto; }
+.center { margin: auto !important; text-align: center; display: block !important; }
+.container { padding: 15px; margin: 0 auto; text-align: center; }
+.logo_title {
+    @include text3d();
+    font-size: 4rem;
+}
+
+.logo_brand_title {
+    @include text3d();
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.mat-toolbar {
+    background: #3f51b5;
+    color: white;
+}
+
+button, .button, .mat-button-base {
+    word-wrap: break-word !important;
+    white-space: normal !important;
+    box-sizing: border-box !important;
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+    &:hover:not(.logo_brand_title):not(.logo_title) { 
+        text-decoration: underline; 
+    } 
+}

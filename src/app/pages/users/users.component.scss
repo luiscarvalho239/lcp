@@ -1,0 +1,194 @@
+::ng-deep .container {
+    padding: 0;
+}
+
+.header_image {
+    img, .img, #img {
+        position: relative;
+        background: url('/assets/images/cover.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+        background-size: cover;
+        width: auto;
+        height: auto;
+        min-height: 50vh !important;
+
+      &::after {
+        content: "Users Page";
+        font-size: 3rem;
+        color: yellow;
+        position: absolute;
+        left: 50%;
+        right: auto;
+        top: 50%;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+      }
+    }
+}
+
+.text {
+    padding: 15px;
+}
+
+input { width: 100% !important; }
+
+.mt-3 { margin-top: 15px; }
+.ml-3 { margin-left: 15px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.userscardcontent {
+    margin-top: 16px !important;
+}
+
+.myuserscard {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.users-card {
+    margin: 0;
+    border: 0;
+    white-space: normal;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    .mat-card-content {
+        padding: 16px;
+    }
+    .user_content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0;
+        margin: 16px 0;
+    }
+    .content_left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 50%;
+    }
+    .content_right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 50%;
+    }
+    .mat-card-image, .img-responsive {
+        display: block;
+        width: 150px;
+        height: 150px;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0;
+        object-fit: contain;
+        object-position: top center;
+    }
+    .mat-card-title:hover {
+        cursor: pointer;
+    }
+    &:hover {
+        // cursor: pointer;
+        border: 0;
+    }
+}
+
+.clearfix {
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
+
+.users-header-image {
+    background-size: cover;
+}
+
+.mat-card-image {
+    margin: 0 -16px 12px -16px;
+    border: 0;
+    border-radius: 0;
+}
+
+.mat-card-header {
+    margin: -16px -16px -16px -16px !important;
+    padding: 16px;
+    background: #4859b7;
+    color: white;
+    border: 0;
+    border-radius: 0;
+
+    .mat-card-title, ::ng-deep .mat-card-header-text {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .mat-card-subtitle {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    & * {
+        color: inherit;
+    }
+}
+
+.long_text {
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    &:hover {
+        width: 100%;
+        white-space: normal !important;
+        overflow: auto !important;
+    }
+}
+
+.mcontainer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px;
+}
+
+.hidden { display: none !important; }
+
+.m-0 { margin: 0 !important; }
+.mx-auto { margin: 0 auto !important; }
+
+.t-left { text-align: left !important; }
+.t-center { text-align: center !important; }
+.t-right { text-align: right !important; }
+
+@media all and (max-width: 968px) {
+    .header_image {
+        img, .img, #img {
+            min-height: 50vh !important;
+        }
+    }
+
+    .mcontainer { max-width: 100% !important; }
+}
+
+@media all and (max-width: 768px) {
+    .users-card {
+        .user_content, .content_left, .content_right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}

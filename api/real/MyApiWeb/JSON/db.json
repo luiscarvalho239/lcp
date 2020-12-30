@@ -1,0 +1,168 @@
+{
+  "save_games": [
+    {
+      "id": 1,
+      "title": "Prologue",
+      "is_req_to_100": true,
+      "type_medal": "gold",
+      "file_img": "assets/games/gtav/images/m1.png",
+      "file_url": "assets/games/gtav/saves/m1.zip",
+      "gamesId": 1,
+      "usersId": 1
+    },
+    {
+      "id": 2,
+      "title": "Franklin and Lamar",
+      "is_req_to_100": true,
+      "type_medal": "gold",
+      "file_img": "assets/games/gtav/images/m2.png",
+      "file_url": "assets/games/gtav/saves/m2.zip",
+      "gamesId": 1,
+      "usersId": 1
+    },
+    {
+      "id": 3,
+      "title": "Repossession",
+      "is_req_to_100": true,
+      "type_medal": "gold",
+      "file_img": "assets/games/gtav/images/m3.png",
+      "file_url": "assets/games/gtav/saves/m3.zip",
+      "gamesId": 1,
+      "usersId": 1
+    },
+    {
+      "id": 4,
+      "title": "Complications",
+      "is_req_to_100": true,
+      "type_medal": "gold",
+      "file_img": "assets/games/gtav/images/m4.png",
+      "file_url": "assets/games/gtav/saves/m4.zip",
+      "gamesId": 1,
+      "usersId": 1
+    },
+    {
+      "id": 5,
+      "title": "Chop",
+      "is_req_to_100": true,
+      "type_medal": "gold",
+      "file_img": "assets/games/gtav/images/m5.png",
+      "file_url": "assets/games/gtav/saves/m5.zip",
+      "gamesId": 1,
+      "usersId": 1
+    }
+  ],
+  "games": [
+    {
+      "id": 1,
+      "title": "GTA V",
+      "desc": "Grand Theft Auto V",
+      "platforms": "PS3/XBOX 360/PS4/PC/PS5/XBOX SERIES S|X",
+      "platform_used": "PC",
+      "genre": "Action and Adventure",
+      "release_date": "2013-09-17T00:00:00",
+      "publisher": "Rockstar Games",
+      "developer": "Rockstar North",
+      "cover": "assets/games/gtav/cover.png",
+      "usersId": 1
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "src": "/assets/videos/v1.mp4",
+      "type": "video/mp4"
+    },
+    {
+      "id": 2,
+      "src": "/assets/videos/v2.mp4",
+      "type": "video/mp4"
+    },
+    {
+      "id": 3,
+      "src": "/assets/videos/v3.mp4",
+      "type": "video/mp4"
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "title": "Noticia 1",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
+      "date": "2020-11-10T14:26:00",
+      "cover": "assets/images/cover.jpg",
+      "category": "Exemplo",
+      "text": "<p class='t-justify'>Lorem ipsum dolor sit amet, <b style='background-color: yellow;'>consectetur adipiscing elit</b>. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.</p><p>Youtube video: </p><iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/azdwsXLmrHE' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+      "source": "/news/1",
+      "usersId": 1
+    },
+    {
+      "id": 2,
+      "title": "Noticia 2",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
+      "date": "2020-11-10T14:26:00",
+      "cover": "assets/images/cover.jpg",
+      "category": "Exemplo",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
+      "source": "/news/2",
+      "usersId": 1
+    },
+    {
+      "id": 3,
+      "title": "Noticia 3",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
+      "date": "2020-11-10T14:26:00",
+      "cover": "assets/images/cover.jpg",
+      "category": "Exemplo",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
+      "source": "/news/3",
+      "usersId": 1
+    },
+    {
+      "id": 4,
+      "title": "Noticia 4",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
+      "date": "2020-11-10T14:26:00",
+      "cover": "assets/images/cover.jpg",
+      "category": "Exemplo",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
+      "source": "/news/4",
+      "usersId": 1
+    },
+    {
+      "id": 5,
+      "title": "Noticia 5",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
+      "date": "2020-11-10T14:26:00",
+      "cover": "assets/images/cover.jpg",
+      "category": "Exemplo",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
+      "source": "/news/5",
+      "usersId": 1
+    },
+    {
+      "id": 6,
+      "title": "Noticia 6",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
+      "date": "2020-11-10T14:26:00",
+      "cover": "assets/images/cover.jpg",
+      "category": "Exemplo",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
+      "source": "/news/6",
+      "usersId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "luigi"
+    },
+    {
+      "id": 2,
+      "name": "sonic"
+    },
+    {
+      "id": 3,
+      "name": "mario"
+    }
+  ]
+}
