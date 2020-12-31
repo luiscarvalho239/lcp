@@ -10,66 +10,66 @@ using MyApiWeb.Models;
 namespace MyApiWeb.Migrations
 {
     [DbContext(typeof(AllDBContext))]
-    [Migration("20201204163900_Initial")]
+    [Migration("20201231110646_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "5.0.0");
 
             modelBuilder.Entity("MyApiWeb.Models.Games", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnName("id")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Cover")
-                        .HasColumnName("cover")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("cover");
 
                     b.Property<string>("Desc")
-                        .HasColumnName("desc")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("desc");
 
                     b.Property<string>("Developer")
-                        .HasColumnName("developer")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("developer");
 
                     b.Property<string>("Genre")
-                        .HasColumnName("genre")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("genre");
 
                     b.Property<string>("Platform_used")
-                        .HasColumnName("platform_used")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("platform_used");
 
                     b.Property<string>("Platforms")
-                        .HasColumnName("platforms")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("platforms");
 
                     b.Property<string>("Publisher")
-                        .HasColumnName("publisher")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("publisher");
 
                     b.Property<DateTime>("Release_date")
-                        .HasColumnName("release_date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("release_date");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnName("title")
+                        .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)")
-                        .HasMaxLength(255);
+                        .HasColumnName("title");
 
                     b.Property<int>("UsersId")
-                        .HasColumnName("usersId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("usersId");
 
                     b.HasKey("Id");
 
@@ -96,43 +96,43 @@ namespace MyApiWeb.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnName("id")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Category")
-                        .HasColumnName("category")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("category");
 
                     b.Property<string>("Cover")
-                        .HasColumnName("cover")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("cover");
 
                     b.Property<DateTime>("Date")
-                        .HasColumnName("date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("date");
 
                     b.Property<string>("Desc")
-                        .HasColumnName("desc")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("desc");
 
                     b.Property<string>("Source")
-                        .HasColumnName("source")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("source");
 
                     b.Property<string>("Text")
-                        .HasColumnName("text")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("text");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnName("title")
+                        .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)")
-                        .HasMaxLength(255);
+                        .HasColumnName("title");
 
                     b.Property<int>("UsersId")
-                        .HasColumnName("usersId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("usersId");
 
                     b.HasKey("Id");
 
@@ -144,7 +144,7 @@ namespace MyApiWeb.Migrations
                             Id = 1,
                             Category = "Exemplo",
                             Cover = "assets/images/cover.jpg",
-                            Date = new DateTime(2020, 12, 4, 16, 39, 0, 457, DateTimeKind.Utc).AddTicks(429),
+                            Date = new DateTime(2020, 12, 31, 11, 6, 46, 544, DateTimeKind.Utc).AddTicks(404),
                             Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
                             Source = "/news/1",
                             Text = "<p class='t-justify'>Lorem ipsum dolor sit amet, <b style='background-color: yellow;'>consectetur adipiscing elit</b>. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.</p><p>Youtube video: </p><iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/azdwsXLmrHE' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
@@ -156,7 +156,7 @@ namespace MyApiWeb.Migrations
                             Id = 2,
                             Category = "Exemplo",
                             Cover = "assets/images/cover.jpg",
-                            Date = new DateTime(2020, 12, 4, 16, 39, 0, 457, DateTimeKind.Utc).AddTicks(2733),
+                            Date = new DateTime(2020, 12, 31, 11, 6, 46, 544, DateTimeKind.Utc).AddTicks(1738),
                             Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
                             Source = "/news/2",
                             Text = "<p class='t-justify'>Lorem ipsum dolor sit amet, <b style='background-color: orange;'>consectetur adipiscing elit</b>. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.</p><p>Youtube video: </p><iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/azdwsXLmrHE' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
@@ -168,7 +168,7 @@ namespace MyApiWeb.Migrations
                             Id = 3,
                             Category = "Exemplo",
                             Cover = "assets/images/cover.jpg",
-                            Date = new DateTime(2020, 12, 4, 16, 39, 0, 457, DateTimeKind.Utc).AddTicks(2775),
+                            Date = new DateTime(2020, 12, 31, 11, 6, 46, 544, DateTimeKind.Utc).AddTicks(1742),
                             Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
                             Source = "/news/3",
                             Text = "<p class='t-justify'>Lorem ipsum dolor sit amet, <b style='background-color: lightblue;'>consectetur adipiscing elit</b>. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.</p><p>Youtube video: </p><iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/azdwsXLmrHE' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
@@ -180,7 +180,7 @@ namespace MyApiWeb.Migrations
                             Id = 4,
                             Category = "Exemplo",
                             Cover = "assets/images/cover.jpg",
-                            Date = new DateTime(2020, 12, 4, 16, 39, 0, 457, DateTimeKind.Utc).AddTicks(2777),
+                            Date = new DateTime(2020, 12, 31, 11, 6, 46, 544, DateTimeKind.Utc).AddTicks(1744),
                             Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
                             Source = "/news/4",
                             Text = "<p class='t-justify'>Lorem ipsum dolor sit amet, <b style='background-color: orange;'>consectetur adipiscing elit</b>. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.</p><p>Youtube video: </p><iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/azdwsXLmrHE' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
@@ -192,7 +192,7 @@ namespace MyApiWeb.Migrations
                             Id = 5,
                             Category = "Exemplo",
                             Cover = "assets/images/cover.jpg",
-                            Date = new DateTime(2020, 12, 4, 16, 39, 0, 457, DateTimeKind.Utc).AddTicks(2778),
+                            Date = new DateTime(2020, 12, 31, 11, 6, 46, 544, DateTimeKind.Utc).AddTicks(1746),
                             Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
                             Source = "/news/5",
                             Text = "<p class='t-justify'>Lorem ipsum dolor sit amet, <b style='background-color: yellow;'>consectetur adipiscing elit</b>. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.</p><p>Youtube video: </p><iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/azdwsXLmrHE' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
@@ -204,7 +204,7 @@ namespace MyApiWeb.Migrations
                             Id = 6,
                             Category = "Exemplo",
                             Cover = "assets/images/cover.jpg",
-                            Date = new DateTime(2020, 12, 4, 16, 39, 0, 457, DateTimeKind.Utc).AddTicks(2779),
+                            Date = new DateTime(2020, 12, 31, 11, 6, 46, 544, DateTimeKind.Utc).AddTicks(1748),
                             Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.",
                             Source = "/news/6",
                             Text = "<p class='t-justify'>Lorem ipsum dolor sit amet, <b style='background-color: orange;'>consectetur adipiscing elit</b>. Suspendisse lobortis vitae elit id sagittis. Integer maximus leo in dapibus feugiat. Duis nulla orci, consequat in lobortis vel, condimentum vel turpis. Morbi quis tincidunt enim. Nunc finibus mi felis. Sed lobortis ornare dui, sit amet consequat felis. Suspendisse id orci accumsan, tincidunt quam ultrices, fringilla turpis.</p><p>Youtube video: </p><iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/azdwsXLmrHE' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
@@ -217,23 +217,23 @@ namespace MyApiWeb.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnName("id")
+                        .UseIdentityColumn();
 
                     b.Property<string>("RadioImage")
-                        .HasColumnName("radioimage")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("radioimage");
 
                     b.Property<string>("RadioSrc")
                         .IsRequired()
-                        .HasColumnName("radiosrc")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("radiosrc");
 
                     b.Property<string>("RadioTitle")
                         .IsRequired()
-                        .HasColumnName("radiotitle")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("radiotitle");
 
                     b.HasKey("Id");
 
@@ -253,39 +253,39 @@ namespace MyApiWeb.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnName("id")
+                        .UseIdentityColumn();
 
                     b.Property<string>("File_img")
-                        .HasColumnName("file_img")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("file_img");
 
                     b.Property<string>("File_url")
-                        .HasColumnName("file_url")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("file_url");
 
                     b.Property<int>("GamesId")
-                        .HasColumnName("gamesId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("gamesId");
 
                     b.Property<bool>("Is_req_to_100")
-                        .HasColumnName("is_req_to_100")
-                        .HasColumnType("bit");
+                        .HasColumnType("bit")
+                        .HasColumnName("is_req_to_100");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnName("title")
+                        .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)")
-                        .HasMaxLength(255);
+                        .HasColumnName("title");
 
                     b.Property<string>("Type_medal")
-                        .HasColumnName("type_medal")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("type_medal");
 
                     b.Property<int>("UsersId")
-                        .HasColumnName("usersId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("usersId");
 
                     b.HasKey("Id");
 
@@ -309,43 +309,43 @@ namespace MyApiWeb.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnName("id")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Email")
-                        .HasColumnName("email")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("email");
 
                     b.Property<string>("FirstName")
-                        .HasColumnName("firstName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("firstName");
 
                     b.Property<string>("Image")
-                        .HasColumnName("image")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("image");
 
                     b.Property<string>("LastName")
-                        .HasColumnName("lastName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("lastName");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnName("password")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("password");
 
                     b.Property<string>("Role")
-                        .HasColumnName("role")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("role");
 
                     b.Property<string>("Token")
-                        .HasColumnName("token")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("token");
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasColumnName("username")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("username");
 
                     b.HasKey("Id");
 
@@ -359,9 +359,9 @@ namespace MyApiWeb.Migrations
                             FirstName = "Luis",
                             Image = "https://localhost:5001/resources/images/luis.jpg",
                             LastName = "Carvalho",
-                            Password = "$2a$11$MBdIjKpMNKvW3TTaQ0rhPOfAsTmpesa1Lt718Vg4ozGhJJEq5YO.S",
+                            Password = "$2a$11$203u39ttCbbhgWL7SUSva.izBIXKYZfeom97S1fkTECIGc4YANeWK",
                             Role = "admin",
-                            Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imx1aXMiLCJqdGkiOiI1ZDZiNDg4MS1mM2I4LTRkMjQtYThlYy1kZDQ1ZmNkZTZlMTciLCJleHAiOjE2MDc3MDQ3MzksImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIn0.eJN2qSRmTDlHxgUJVWGe9UyXJ9EQHpUFdgeoZyFcNk8",
+                            Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imx1aXMiLCJqdGkiOiIxMzg2MTI1ZS0zOGQ0LTQ4MzItYjE2Yy05NjExOWU0YzQ1MTciLCJleHAiOjE2MTAwMTc2MDUsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIn0.tEGfasMoeiKJMbnKbWdKiNYC3x3uLP73gjPx7cKon8o",
                             Username = "luis"
                         },
                         new
@@ -371,9 +371,9 @@ namespace MyApiWeb.Migrations
                             FirstName = "Guest",
                             Image = "https://localhost:5001/resources/images/guest.png",
                             LastName = "G",
-                            Password = "$2a$11$XIFuKvD/OTKfMoZpqan3Wui8m6P8gPqP0EUdleAXjy8tA5NyTXFPS",
+                            Password = "$2a$11$L2dGcMclDLSieiMqwZXgq.RIjKIzHqFjWgLlBRRUCffrYZ4jEy37q",
                             Role = "guest",
-                            Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imd1ZXN0IiwianRpIjoiMGVhYjYyOTEtN2Q2NS00NjkyLTg2NjgtZjk1Y2I5MjhlNWNmIiwiZXhwIjoxNjA3NzA0NzM5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.8jucFIGU8B-pzFXEohkE660m76T8hhH7kdUkInZI20k",
+                            Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imd1ZXN0IiwianRpIjoiZTJiOTBiMDMtZjA5Ny00NzhiLWE2YWMtZDNlM2IwZGE3OGEzIiwiZXhwIjoxNjEwMDE3NjA1LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.zAcub0KdTcLiTv0_EWtmhR8TM5omV9K9lgUrZJyHIyE",
                             Username = "guest"
                         },
                         new
@@ -383,9 +383,9 @@ namespace MyApiWeb.Migrations
                             FirstName = "Son",
                             Image = "https://localhost:5001/resources/images/goku.png",
                             LastName = "Goku",
-                            Password = "$2a$11$dqf7gh6L8MlTFphbreDLBelVDD82UEg3r6P1mvpyka/mE.BlIkCpC",
+                            Password = "$2a$11$Q6EoiQARqEHHqCUF3QpQ6Ow8LeHg5aLGUPijsynC9bKEaFmoIBMuS",
                             Role = "user",
-                            Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imdva3UiLCJqdGkiOiJmNDk2NTE1My01ZWRkLTRjODAtYTJmYS1iYzZiN2QzN2M4MmEiLCJleHAiOjE2MDc3MDQ3MzksImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIn0.vYzL2yT-l5n5HEcYGRQC91ExAzTopGLXAQMWkZprF1M",
+                            Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imdva3UiLCJqdGkiOiIyYjIxZDI4OC1kZGEyLTQwNzAtYTNkZi1lNzNjYTkzNmZiZDUiLCJleHAiOjE2MTAwMTc2MDUsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIn0.fnaJZe-LR5y9HwjVhq2tv-MceF59vZmMgN5NTJ__Y_I",
                             Username = "goku"
                         },
                         new
@@ -395,9 +395,9 @@ namespace MyApiWeb.Migrations
                             FirstName = "Danny",
                             Image = "https://localhost:5001/resources/images/danny.png",
                             LastName = "Phantom",
-                            Password = "$2a$11$fPaEnzaegVBH.5mnk.gEU.zYGVuaLFwuscQK7kWVcgIfgD7SPGluS",
+                            Password = "$2a$11$UAJkaqpYxyG8FwYJ3TOtaun/Rt/sMFzs/9CJCedxvEr2c8sgOazMO",
                             Role = "user",
-                            Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRhbm55X3BoYW50b20iLCJqdGkiOiJiNDQwZDZmYi1lMGI1LTQ1MWItYWFhZi0zZDEzYTFlYzU1MzciLCJleHAiOjE2MDc3MDQ3MzksImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIn0.oTHERFsetwW9sSczzrhv4INUS66PrEGzVEQmvyEqQ1U",
+                            Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRhbm55X3BoYW50b20iLCJqdGkiOiJhZjY4MzAxOS1mZDVhLTRmMjctYWM1OS1iNjllYTkwNGYzNmQiLCJleHAiOjE2MTAwMTc2MDUsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIn0.toAkGMZ9KuzFXgoVAgRmJdrwAGOj_voBUeXTQ5qjSZI",
                             Username = "danny_phantom"
                         },
                         new
@@ -407,9 +407,9 @@ namespace MyApiWeb.Migrations
                             FirstName = "Jimmy",
                             Image = "https://localhost:5001/resources/images/jimmy.jpg",
                             LastName = "Neutron",
-                            Password = "$2a$11$Lm3jU34IOFLah.i16OfHZuqAK2sQqE2ewKGNFS/JMOZ0yY9lOqcHi",
+                            Password = "$2a$11$pKZ8ulrzZLk7MlM4agwElepWp4fQaBDyD3hKJ4mcOM3w63ZQIyXa6",
                             Role = "user",
-                            Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImppbW15X25ldXRyb24iLCJqdGkiOiI1NGU2NTdmYy1lZTI5LTQ4YzktYWM0ZS0yYTQ5NWJiN2RiOTYiLCJleHAiOjE2MDc3MDQ3MzksImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIn0.6Aag7e9UKaxVSWRWoGQL-hxBcJHKa-z55SZe75IjezM",
+                            Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImppbW15X25ldXRyb24iLCJqdGkiOiI0YjVjOGQ3Yy01YTVhLTRhMDQtOGRlYS1lY2YwZTg1MDQ1Y2QiLCJleHAiOjE2MTAwMTc2MDUsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIn0.Nh0BN86uCvxQgBbyX245iQa1fuJspXkbKWZ89H1pLik",
                             Username = "jimmy_neutron"
                         },
                         new
@@ -419,9 +419,9 @@ namespace MyApiWeb.Migrations
                             FirstName = "Timmy",
                             Image = "https://localhost:5001/resources/images/timmy.png",
                             LastName = "Turner",
-                            Password = "$2a$11$XbZ.RL7IvfFk82LEVcEC..7GwYbDrEI2O1/xztSo3E4637B0N1cM2",
+                            Password = "$2a$11$qoDJzk7Y33j9YO32EuUsUeZjBcdWQtf3qrha8RmFpV/fBRFaltQtu",
                             Role = "user",
-                            Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRpbW15X3R1cm5lciIsImp0aSI6IjBiOWQ2MTliLTAwYmQtNGExOC1hYmRiLTJhNjY5YTRhMjI4MCIsImV4cCI6MTYwNzcwNDczOSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.GCjRGOsc8i3oHFswy2b5-v76QI3PDHpotNce7Y1F0Pc",
+                            Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRpbW15X3R1cm5lciIsImp0aSI6IjgxYmVlNzIwLTVhOGMtNDNlNC1iMDg5LWI0NWZiZjc2N2U2OCIsImV4cCI6MTYxMDAxNzYwNSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.zdwU5bbz527OMLR_1A8RBIUG-IQrMosvxjfbwI740t8",
                             Username = "timmy_turner"
                         },
                         new
@@ -431,9 +431,9 @@ namespace MyApiWeb.Migrations
                             FirstName = "Iron",
                             Image = "https://localhost:5001/resources/images/ironman.jpg",
                             LastName = "Man",
-                            Password = "$2a$11$VikNw3yntQ9Hi1nHxFgx0eEnzGYGsu8bDD970Gl.ic4YwmyASU.3C",
+                            Password = "$2a$11$H3FX8Jvyg1EJBhf0lybBi.k.q.WTUV0En9PXTebfyI2ezECD/s9pu",
                             Role = "user",
-                            Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imlyb25tYW4iLCJqdGkiOiIwYjUwMDAzYy04Mzk0LTQyOTEtYmM2Zi1hZjNkYWNkYjA3MTkiLCJleHAiOjE2MDc3MDQ3MzksImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIn0.0XHyqsKZE9xMAvC5vo60dlCghJ5eUPCqUwXr3NmoCNc",
+                            Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imlyb25tYW4iLCJqdGkiOiI4Zjk0MGNkMi05OWU2LTQyOGItYTQ1Yy1jMDIyYzQ1NmQ4ZmYiLCJleHAiOjE2MTAwMTc2MDUsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIn0.WIrheMS0FJTL0G8v_wxW9TbkaU2R-yZN0vhyRj6w5bY",
                             Username = "ironman"
                         });
                 });
@@ -442,18 +442,18 @@ namespace MyApiWeb.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnName("id")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Src")
                         .IsRequired()
-                        .HasColumnName("src")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("src");
 
                     b.Property<string>("Type")
-                        .HasColumnName("type")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("type");
 
                     b.HasKey("Id");
 

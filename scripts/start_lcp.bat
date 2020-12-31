@@ -1,7 +1,7 @@
 @echo off
 setlocal ENABLEEXTENSIONS
 chcp 65001
-set "pathproject=C:\Users\Luis\Documents\angular\lcp"
+set "pathproject=C:\Users\%username%\Documents\angular\lcp"
 
 :main
 cls

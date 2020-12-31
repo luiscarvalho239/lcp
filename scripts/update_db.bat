@@ -18,7 +18,7 @@ exit /b %ERRORLEVEL%
 
 :update_db
 cls
-cd "C:\Users\Luis\Documents\angular\lcp\api\real\MyApiWeb"
+cd "C:\Users\%username%\Documents\angular\lcp\api\real\MyApiWeb"
 
 dotnet tool install --global dotnet-ef
 dotnet ef database drop

@@ -1,7 +1,7 @@
 @echo off
 setlocal ENABLEEXTENSIONS
 
-set "path=C:\Users\Luis\Documents\angular\lcp\src\app"
+set "path=C:\Users\%username%\Documents\angular\lcp\src\app"
 
 :main
 cls
