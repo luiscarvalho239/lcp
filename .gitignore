@@ -47,3 +47,4 @@ Thumbs.db
 /api/real/MyApiWeb/bin
 /api/real/MyApiWeb/obj
 /api/real/MyApiWeb/obj/Debug/net5.0/MyApiWeb.csprojAssemblyReference.cache
+/.vs
